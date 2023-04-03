@@ -1,5 +1,13 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let seen = new Set();
+  for (let num of array) {
+    if (seen.has(target - num)) {
+      return true;
+    }
+    seen.add(num);
+  }
+  return false;
 }
 
 /* 
